@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rustling — Learn Rust by Doing</title>
+  <meta name="description" content="An interactive, hands-on introduction to Rust for programmers who already know another language." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top bar -->
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Toggle menu" title="Menu">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+      </button>
+
+      <a class="brand" href="#/" aria-label="Rustling home">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span class="brand-name">rustling<span class="brand-dot">.</span></span>
+      </a>
+
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="searchInput" class="search-input" type="search" placeholder="Search lessons…  (press /)" autocomplete="off" aria-label="Search lessons" />
+        <kbd class="search-kbd">/</kbd>
+      </div>
+
+      <div class="topbar-right">
+        <div class="progress-pill" title="Course progress">
+          <span class="progress-pill-label">Progress</span>
+          <div class="mini-track"><div class="mini-fill" id="topProgressFill"></div></div>
+          <span class="progress-pill-num" id="topProgressNum">0%</span>
+        </div>
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" width="19" height="19"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="body-wrap">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <nav id="sidebarNav" aria-label="Course navigation"></nav>
+        <div class="sidebar-foot">
+          <div class="sidebar-progress">
+            <div class="sidebar-progress-head">
+              <span>Your progress</span>
+              <strong id="sidebarProgressNum">0 / 0</strong>
+            </div>
+            <div class="track"><div class="fill" id="sidebarProgressFill"></div></div>
+            <p class="sidebar-progress-hint">Lessons completed</p>
+          </div>
+          <button class="reset-btn" id="resetBtn" title="Clear all progress and quiz answers">Reset progress</button>
+        </div>
+      </aside>
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- Main content -->
+      <main class="main" id="main">
+        <div class="content" id="content" tabindex="-1"></div>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/highlighter.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
